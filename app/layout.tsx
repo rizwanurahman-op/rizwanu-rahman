@@ -13,34 +13,43 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Rizwanu Rahman | Full Stack Developer Portfolio",
+  title: "Rizwanu Rahman // Full Stack Software Engineer",
   description:
-    "Full Stack Developer specializing in React, Next.js, TypeScript, and Node.js. Building high-performance web applications with modern technologies. Based in Kerala, India.",
+    "Full Stack Software Engineer & UI Architect specializing in React, Next.js, TypeScript, Node.js, and AI-powered web applications. Crafting high-performance digital experiences.",
   keywords: [
     "Rizwanu Rahman",
-    "Full Stack Developer",
-    "Frontend Developer",
+    "Full Stack Engineer",
+    "Software Engineer",
+    "Frontend Specialist",
     "React Developer",
-    "Next.js Developer",
+    "Next.js Expert",
     "TypeScript",
+    "Node.js",
+    "AI Developer",
     "Portfolio",
-    "Web Developer",
     "Kerala",
     "India",
   ],
   authors: [{ name: "Rizwanu Rahman" }],
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
   openGraph: {
-    title: "Rizwanu Rahman | Full Stack Developer",
+    title: "Rizwanu Rahman // Full Stack Software Engineer",
     description:
-      "Full Stack Developer specializing in React, Next.js, TypeScript, and Node.js.",
+      "Crafting high-performance web applications and AI-driven platforms with React, Next.js & TypeScript.",
+    url: "https://github.com/rizwanurahman-op/rizwanu-rahman",
+    siteName: "Rizwanu Rahman Portfolio",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rizwanu Rahman | Full Stack Developer",
+    title: "Rizwanu Rahman // Full Stack Software Engineer",
     description:
-      "Full Stack Developer specializing in React, Next.js, TypeScript, and Node.js.",
+      "Full Stack Software Engineer specializing in React, Next.js, TypeScript, and AI integrations.",
   },
   robots: {
     index: true,
