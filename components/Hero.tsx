@@ -16,6 +16,7 @@ import { GithubIcon, LinkedinIcon } from "@/components/icons/SocialIcons";
 import TypewriterText from "@/components/ui/TypewriterText";
 import TerminalWindow from "@/components/ui/TerminalWindow";
 import TerminalJsonTyper from "@/components/ui/TerminalJsonTyper";
+import DeveloperAvatar from "@/components/ui/DeveloperAvatar";
 import { personalInfo } from "@/lib/data";
 
 const floatingIcons = [
@@ -272,14 +273,25 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Right Content — Terminal Window */}
+          {/* Right Content — Avatar + Terminal Window */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="lg:col-span-5 order-2 lg:order-2"
+            className="lg:col-span-5 order-2 lg:order-2 flex flex-col items-center gap-8"
           >
-            <div className="animate-float-slow max-w-lg mx-auto lg:max-w-none">
+            {/* Developer Avatar */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="w-full flex justify-center"
+            >
+              <DeveloperAvatar />
+            </motion.div>
+
+            {/* Terminal Window */}
+            <div className="animate-float-slow max-w-lg mx-auto lg:max-w-none w-full">
               <TerminalWindow title="rizwanu@dev ~ %">
                 <TerminalJsonTyper />
               </TerminalWindow>

@@ -69,7 +69,7 @@ export default function SectionHeading({
               className="text-text-secondary text-xs sm:text-sm md:text-base font-mono leading-relaxed text-center"
               style={{ textWrap: "balance" }}
             >
-              <span style={{ color: "#00FF88", fontWeight: 700, marginRight: "8px" }}>//</span>
+              <span style={{ color: "#00FF88", fontWeight: 700, marginRight: "8px" }}>{"//"}</span>
               {subtitle}
             </p>
           </div>

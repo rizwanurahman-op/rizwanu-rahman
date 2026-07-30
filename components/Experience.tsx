@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MapPin, Calendar, Briefcase, Terminal } from "lucide-react";
+import { MapPin, Terminal } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { experiences } from "@/lib/data";
 

@@ -393,7 +393,7 @@ export default function Skills() {
                 className="text-text-secondary text-xs sm:text-sm md:text-base font-mono leading-relaxed text-center"
                 style={{ textWrap: "balance" }}
               >
-                <span style={{ color: "#00FF88", fontWeight: 700, marginRight: "8px" }}>//</span>
+                <span style={{ color: "#00FF88", fontWeight: 700, marginRight: "8px" }}>{"//"}</span>
                 Modern technologies, frameworks, and tools I use to engineer robust applications
               </p>
             </div>

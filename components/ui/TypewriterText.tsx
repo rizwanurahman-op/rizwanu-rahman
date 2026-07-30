@@ -47,8 +47,11 @@ export default function TypewriterText({
         }, deleteSpeed);
         return () => clearTimeout(timeout);
       } else {
-        setPhase("typing");
-        setCurrentIndex((prev) => (prev + 1) % texts.length);
+        const timeout = setTimeout(() => {
+          setPhase("typing");
+          setCurrentIndex((prev) => (prev + 1) % texts.length);
+        }, 0);
+        return () => clearTimeout(timeout);
       }
     }
   }, [displayText, phase, currentIndex, texts, speed, deleteSpeed, pauseTime]);

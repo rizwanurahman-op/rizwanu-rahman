@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Calendar, MapPin, Briefcase, Code, Folder, Building2, Terminal } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -316,15 +317,19 @@ export default function About() {
               <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
                 <div className="flex items-center gap-4">
                   <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
+                    className="relative w-14 h-14 rounded-full shrink-0 overflow-hidden"
                     style={{
-                      background: "rgba(0, 255, 136, 0.1)",
-                      border: "1.5px solid rgba(0, 255, 136, 0.25)",
-                      color: "#00FF88",
-                      boxShadow: "0 0 16px rgba(0, 255, 136, 0.05)",
+                      border: "2px solid rgba(0, 255, 136, 0.4)",
+                      boxShadow: "0 0 20px rgba(0, 255, 136, 0.12), 0 0 40px rgba(0, 255, 136, 0.05)",
                     }}
                   >
-                    <Code size={24} strokeWidth={1.5} />
+                    <Image
+                      src="/profile.png"
+                      alt="Rizwanu Rahman"
+                      fill
+                      className="object-cover"
+                      sizes="56px"
+                    />
                   </div>
                   <div>
                     <h3

@@ -8,7 +8,6 @@ import {
   MapPin,
   Send,
   ArrowUpRight,
-  Terminal,
 } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/icons/SocialIcons";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -229,7 +228,7 @@ export default function Contact() {
                       className="block font-mono text-xs mb-1.5"
                       style={{ color: "#8B949E" }}
                     >
-                      <span style={{ color: "#00FF88" }}>//</span> sender_name
+                      <span style={{ color: "#00FF88" }}>{"//"}</span> sender_name
                     </label>
                     <input
                       type="text"
@@ -262,7 +261,7 @@ export default function Contact() {
                       className="block font-mono text-xs mb-1.5"
                       style={{ color: "#8B949E" }}
                     >
-                      <span style={{ color: "#00FF88" }}>//</span> sender_email
+                      <span style={{ color: "#00FF88" }}>{"//"}</span> sender_email
                     </label>
                     <input
                       type="email"
@@ -297,7 +296,7 @@ export default function Contact() {
                     className="block font-mono text-xs mb-1.5"
                     style={{ color: "#8B949E" }}
                   >
-                    <span style={{ color: "#00FF88" }}>//</span> message_subject
+                    <span style={{ color: "#00FF88" }}>{"//"}</span> message_subject
                   </label>
                   <input
                     type="text"
@@ -330,7 +329,7 @@ export default function Contact() {
                     className="block font-mono text-xs mb-1.5"
                     style={{ color: "#8B949E" }}
                   >
-                    <span style={{ color: "#00FF88" }}>//</span> payload_body
+                    <span style={{ color: "#00FF88" }}>{"//"}</span> payload_body
                   </label>
                   <textarea
                     rows={4}

@@ -19,27 +19,6 @@ export async function POST(request: Request) {
       timeStyle: "medium",
     });
 
-    const formattedMessage = `
-=====================================================
-⚡ NEW PORTFOLIO CONTACT INQUIRY
-=====================================================
-
-📌 SENDER METADATA:
------------------------------------------------------
-• Full Name : ${name}
-• Email     : ${email}
-• Subject   : ${subject || "Portfolio Contact Inquiry"}
-• Timestamp : ${timestamp} IST
-
-💬 MESSAGE PAYLOAD:
------------------------------------------------------
-${message}
-
-=====================================================
-🚀 Sent via Rizwanu Rahman Portfolio Terminal (POST /api/v1/contact)
-=====================================================
-`;
-
     // Post to FormSubmit AJAX service with table template and custom subject
     const res = await fetch(`https://formsubmit.co/ajax/${recipientEmail}`, {
       method: "POST",
