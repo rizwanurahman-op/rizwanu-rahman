@@ -80,7 +80,7 @@ export default function Footer() {
               className="font-sans leading-relaxed text-xs md:text-sm max-w-md"
               style={{ color: "#8B949E" }}
             >
-              Full Stack Developer engineering modern, high-performance web applications with cutting-edge tech stacks.
+              Rizwanu Rahman — Full Stack Developer engineering modern, high-performance web applications with React, Next.js &amp; TypeScript.
             </p>
           </div>
 

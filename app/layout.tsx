@@ -36,20 +36,29 @@ export const metadata: Metadata = {
     "Rizwanu Rahman is a Full Stack Developer from Kerala, India, specializing in React, Next.js, TypeScript, Node.js, and AI-powered web applications. Available for freelance projects worldwide.",
 
   keywords: [
-    // Name variations — the #1 signal for personal name ranking
+    // Exact name & all natural search variations
     "Rizwanu Rahman",
     "Rizwanu Rahman developer",
     "Rizwanu Rahman portfolio",
     "Rizwanu Rahman full stack developer",
+    "Rizwanu Rahman software engineer",
     "Rizwanu Rahman Kerala",
     "Rizwanu Rahman Nilambur",
-    "Rizwanu Rahman software engineer",
     "Rizwanu Rahman freelance",
+    "Rizwanu Rahman React developer",
+    "Rizwanu Rahman Next.js",
+    "Rizwanu Rahman GitHub",
+    "Rizwanu Rahman LinkedIn",
+    "Rizwanu Rahman web developer",
+    "Rizwanu Rahman frontend developer",
     "rizwanurahman.in",
-    // Role keywords
+    "rizwanu rahman",
+    // Role & skill keywords
     "Full Stack Developer",
+    "Full Stack Software Engineer",
     "Software Engineer",
     "Frontend Developer",
+    "Frontend Specialist",
     "React Developer",
     "Next.js Developer",
     "TypeScript Developer",
@@ -57,10 +66,12 @@ export const metadata: Metadata = {
     "AI Developer",
     "Freelance Developer India",
     "Freelance React Developer",
+    "Freelance Next.js Developer",
     "Web Developer Kerala",
     "Web Developer Nilambur",
+    "Web Developer India",
     "Portfolio",
-    "Kerala",
+    "Kerala Developer",
     "India",
   ],
 
@@ -73,6 +84,14 @@ export const metadata: Metadata = {
 
   creator: "Rizwanu Rahman",
   publisher: "Rizwanu Rahman",
+
+  applicationName: "Rizwanu Rahman",
+
+  appleWebApp: {
+    capable: true,
+    title: "Rizwanu Rahman",
+    statusBarStyle: "black-translucent",
+  },
 
   // Canonical URL
   alternates: {
@@ -248,6 +267,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
           strategy="beforeInteractive"
         />
+        {/* Social cross-verification — helps Google's entity graph link your name to your profiles */}
+        <link rel="me" href="https://linkedin.com/in/rizwanurahman" />
+        <link rel="me" href="https://github.com/Rizwanu321" />
+        <link rel="me" href="mailto:Rizwanurahman321@gmail.com" />
         {/* Preconnect to Google Fonts for faster load */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
