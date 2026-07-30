@@ -166,10 +166,10 @@ export const projects: Project[] = [
     id: 3,
     title: "Kerala GG Taxi — Tour & Travel Platform",
     description:
-      "Fleet booking & tour package platform for Kerala taxi services with WhatsApp booking integration.",
+      "A modern tour taxi & travel showcase platform for Golden Globe Taxi Service in Kerala with direct WhatsApp & Call booking.",
     longDescription:
-      "Designed and developed a comprehensive tour taxi booking platform for Golden Globe Taxi Service in Kerala. Features online cab booking, tour package showcases, airport taxi scheduling, vehicle category filters, and direct WhatsApp booking.",
-    techStack: ["React", "Next.js", "TypeScript", "Tailwind CSS", "REST API"],
+      "Designed and developed a responsive frontend tour taxi platform for Golden Globe Taxi Service in Kerala. Features curated tour package showcases, airport taxi scheduling, vehicle category filters, and instant direct WhatsApp & Phone call booking integrations.",
+    techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion"],
     category: "Web Platform",
     icon: "car",
     image: "/keralaggtaxi.png",

@@ -50,9 +50,12 @@ function DeveloperSystemConsole() {
   };
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-3">
       {/* Console Header Control Bar */}
-      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#21262D] pb-3">
+      <div
+        className="flex flex-wrap items-center justify-between gap-3 border-b border-[#21262D]"
+        style={{ paddingBottom: '12px', marginBottom: '4px' }}
+      >
         <div className="flex items-center gap-2">
           <div className="flex items-center gap-1.5 mr-2">
             <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F56] inline-block" />
@@ -66,22 +69,24 @@ function DeveloperSystemConsole() {
         </div>
 
         {/* Console Mode Switcher */}
-        <div className="flex items-center gap-1 bg-[#0D1117] p-1 rounded-lg border border-[#21262D]">
+        <div className="flex items-center gap-1 bg-[#0D1117] rounded-lg border border-[#21262D]" style={{ padding: '3px' }}>
           <button
             onClick={() => setActiveTab("logs")}
-            className={`font-mono text-[11px] px-3 py-1 rounded-md transition-all ${activeTab === "logs"
+            className={`font-mono text-[11px] rounded-md transition-all ${activeTab === "logs"
               ? "bg-[#161B22] text-[#00FF88] border border-[rgba(0,255,136,0.3)] shadow-[0_0_12px_rgba(0,255,136,0.15)] font-semibold"
               : "text-[#8B949E] hover:text-[#C9D1D9]"
               }`}
+            style={{ padding: '5px 14px' }}
           >
             Live Logs
           </button>
           <button
             onClick={() => setActiveTab("specs")}
-            className={`font-mono text-[11px] px-3 py-1 rounded-md transition-all ${activeTab === "specs"
+            className={`font-mono text-[11px] rounded-md transition-all ${activeTab === "specs"
               ? "bg-[#161B22] text-[#00D4FF] border border-[rgba(0,212,255,0.3)] shadow-[0_0_12px_rgba(0,212,255,0.15)] font-semibold"
               : "text-[#8B949E] hover:text-[#C9D1D9]"
               }`}
+            style={{ padding: '5px 14px' }}
           >
             System Specs
           </button>
@@ -90,8 +95,8 @@ function DeveloperSystemConsole() {
 
       {/* Tab 1: Live Terminal Log Console */}
       {activeTab === "logs" ? (
-        <div className="bg-[#0D1117] rounded-xl p-4 border border-[#21262D] font-mono text-xs leading-relaxed space-y-2.5 min-h-[190px] flex flex-col justify-between">
-          <div className="space-y-2 max-h-[160px] overflow-y-auto scrollbar-none">
+        <div className="bg-[#0D1117] rounded-xl border border-[#21262D] font-mono text-xs leading-relaxed flex flex-col" style={{ padding: '14px 16px', minHeight: '180px' }}>
+          <div className="space-y-2 overflow-y-auto scrollbar-none flex-1" style={{ maxHeight: '150px' }}>
             {logs.map((log, idx) => (
               <div key={idx} className="flex items-start gap-2">
                 <span className="text-[#00FF88] shrink-0 font-bold">$</span>
@@ -109,15 +114,16 @@ function DeveloperSystemConsole() {
             ))}
           </div>
 
-          <div className="flex items-center justify-between pt-2 border-t border-[#21262D]/60 text-[11px] text-[#8B949E]">
-            <span className="flex items-center gap-1.5 text-[#00FF88]">
+          <div className="flex flex-wrap items-center justify-between gap-2 border-t border-[#21262D]/60" style={{ paddingTop: '10px', marginTop: '12px' }}>
+            <span className="flex items-center gap-1.5 text-[#00FF88]" style={{ fontSize: '11px' }}>
               <span className="w-1.5 h-1.5 rounded-full bg-[#00FF88] animate-ping" />
               Runtime Active
             </span>
             <button
               onClick={handleDiagnosticScan}
               disabled={isScanning}
-              className="px-3 py-1 rounded-md bg-[#161B22] hover:bg-[#21262D] text-[#00FF88] border border-[rgba(0,255,136,0.3)] transition-all font-semibold hover:shadow-[0_0_12px_rgba(0,255,136,0.2)] disabled:opacity-50"
+              className="rounded-md bg-[#161B22] hover:bg-[#21262D] text-[#00FF88] border border-[rgba(0,255,136,0.3)] transition-all font-semibold hover:shadow-[0_0_12px_rgba(0,255,136,0.2)] disabled:opacity-50 whitespace-nowrap font-mono"
+              style={{ fontSize: '10px', padding: '5px 12px' }}
             >
               {isScanning ? "Scanning System..." : "▶ Run Diagnostics"}
             </button>
@@ -125,46 +131,47 @@ function DeveloperSystemConsole() {
         </div>
       ) : (
         /* Tab 2: System Spec Dashboard */
-        <div className="bg-[#0D1117] rounded-xl p-4 border border-[#21262D] space-y-3 font-mono text-xs min-h-[190px]">
-          <div className="grid grid-cols-2 gap-3">
-            <div className="p-2.5 rounded-lg bg-[#161B22] border border-[#21262D]">
-              <span className="text-[#8B949E] text-[10px] block">CODE QUALITY</span>
-              <span className="text-[#00FF88] font-bold text-sm">100% Type-Safe</span>
-              <div className="w-full bg-[#21262D] h-1.5 rounded-full mt-2 overflow-hidden">
-                <div className="bg-[#00FF88] h-full rounded-full w-[100%] shadow-[0_0_8px_rgba(0,255,136,0.6)]" />
+        <div className="bg-[#0D1117] rounded-xl border border-[#21262D] font-mono text-xs" style={{ padding: '16px' }}>
+          <div className="grid grid-cols-2" style={{ gap: '10px', marginBottom: '12px' }}>
+            <div className="rounded-lg bg-[#161B22] border border-[#21262D] flex flex-col" style={{ padding: '14px 16px' }}>
+              <span className="text-[#8B949E] text-[10px] tracking-wide uppercase" style={{ marginBottom: '6px' }}>Code Quality</span>
+              <span className="text-[#00FF88] font-bold text-sm leading-tight">100% Type-Safe</span>
+              <div className="w-full bg-[#21262D] rounded-full overflow-hidden" style={{ height: '6px', marginTop: '10px' }}>
+                <div className="bg-[#00FF88] h-full rounded-full w-[100%] shadow-[0_0_8px_rgba(0,255,136,0.5)]" />
               </div>
             </div>
 
-            <div className="p-2.5 rounded-lg bg-[#161B22] border border-[#21262D]">
-              <span className="text-[#8B949E] text-[10px] block">AVG API LATENCY</span>
-              <span className="text-[#00D4FF] font-bold text-sm">~24ms TTFB</span>
-              <div className="w-full bg-[#21262D] h-1.5 rounded-full mt-2 overflow-hidden">
+            <div className="rounded-lg bg-[#161B22] border border-[#21262D] flex flex-col" style={{ padding: '14px 16px' }}>
+              <span className="text-[#8B949E] text-[10px] tracking-wide uppercase" style={{ marginBottom: '6px' }}>Avg API Latency</span>
+              <span className="text-[#00D4FF] font-bold text-sm leading-tight">~24ms TTFB</span>
+              <div className="w-full bg-[#21262D] rounded-full overflow-hidden" style={{ height: '6px', marginTop: '10px' }}>
                 <div className="bg-[#00D4FF] h-full rounded-full w-[92%]" />
               </div>
             </div>
 
-            <div className="p-2.5 rounded-lg bg-[#161B22] border border-[#21262D]">
-              <span className="text-[#8B949E] text-[10px] block">ARCHITECTURE</span>
-              <span className="text-[#B44AFF] font-bold text-sm">Clean & Modular</span>
-              <div className="w-full bg-[#21262D] h-1.5 rounded-full mt-2 overflow-hidden">
+            <div className="rounded-lg bg-[#161B22] border border-[#21262D] flex flex-col" style={{ padding: '14px 16px' }}>
+              <span className="text-[#8B949E] text-[10px] tracking-wide uppercase" style={{ marginBottom: '6px' }}>Architecture</span>
+              <span className="text-[#B44AFF] font-bold text-sm leading-tight">Clean & Modular</span>
+              <div className="w-full bg-[#21262D] rounded-full overflow-hidden" style={{ height: '6px', marginTop: '10px' }}>
                 <div className="bg-[#B44AFF] h-full rounded-full w-[96%]" />
               </div>
             </div>
 
-            <div className="p-2.5 rounded-lg bg-[#161B22] border border-[#21262D]">
-              <span className="text-[#8B949E] text-[10px] block">CI/CD DEPLOY</span>
-              <span className="text-[#FBB924] font-bold text-sm">99.9% Uptime</span>
-              <div className="w-full bg-[#21262D] h-1.5 rounded-full mt-2 overflow-hidden">
+            <div className="rounded-lg bg-[#161B22] border border-[#21262D] flex flex-col" style={{ padding: '14px 16px' }}>
+              <span className="text-[#8B949E] text-[10px] tracking-wide uppercase" style={{ marginBottom: '6px' }}>CI/CD Deploy</span>
+              <span className="text-[#FBB924] font-bold text-sm leading-tight">99.9% Uptime</span>
+              <div className="w-full bg-[#21262D] rounded-full overflow-hidden" style={{ height: '6px', marginTop: '10px' }}>
                 <div className="bg-[#FBB924] h-full rounded-full w-[99%]" />
               </div>
             </div>
           </div>
 
-          <div className="flex items-center justify-between pt-1">
-            <span className="text-[11px] text-[#8B949E]">System Environment: Production Ready</span>
+          <div className="flex flex-wrap items-center justify-between gap-2 border-t border-[#21262D]" style={{ paddingTop: '12px' }}>
+            <span className="text-[11px] text-[#8B949E] min-w-0 shrink">System Environment: Production Ready</span>
             <button
               onClick={handleCopySpec}
-              className="px-3 py-1 rounded-md bg-[#161B22] hover:bg-[#21262D] text-[#00D4FF] border border-[rgba(0,212,255,0.3)] transition-all font-semibold hover:shadow-[0_0_12px_rgba(0,212,255,0.2)]"
+              className="rounded-md bg-[#161B22] hover:bg-[#21262D] text-[#00D4FF] border border-[rgba(0,212,255,0.3)] transition-all font-semibold hover:shadow-[0_0_12px_rgba(0,212,255,0.2)] whitespace-nowrap shrink-0 font-mono"
+              style={{ fontSize: '10px', padding: '5px 12px' }}
             >
               {copied ? "✓ Spec Copied!" : "📋 Copy Spec"}
             </button>
@@ -173,17 +180,17 @@ function DeveloperSystemConsole() {
       )}
 
       {/* Metrics Footnote Chips */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 font-mono text-center">
-        <div className="p-2 rounded-lg bg-[#161B22] border border-[#21262D]">
-          <span className="text-[10px] text-[#8B949E] block">SYSTEM ROLE</span>
+      <div className="grid grid-cols-3 gap-2 font-mono text-center">
+        <div className="p-3 rounded-lg bg-[#161B22] border border-[#21262D]">
+          <span className="text-[10px] uppercase tracking-wide text-[#8B949E] block mb-1">System Role</span>
           <span className="text-xs font-bold text-[#00FF88]">Full Stack Eng.</span>
         </div>
-        <div className="p-2 rounded-lg bg-[#161B22] border border-[#21262D]">
-          <span className="text-[10px] text-[#8B949E] block">EXPERIENCE</span>
+        <div className="p-3 rounded-lg bg-[#161B22] border border-[#21262D]">
+          <span className="text-[10px] uppercase tracking-wide text-[#8B949E] block mb-1">Experience</span>
           <span className="text-xs font-bold text-[#00D4FF]">3+ Years</span>
         </div>
-        <div className="p-2 rounded-lg bg-[#161B22] border border-[#21262D]">
-          <span className="text-[10px] text-[#8B949E] block">WORK STATUS</span>
+        <div className="p-3 rounded-lg bg-[#161B22] border border-[#21262D]">
+          <span className="text-[10px] uppercase tracking-wide text-[#8B949E] block mb-1">Work Status</span>
           <span className="text-xs font-bold text-[#FBB924]">Open for Roles</span>
         </div>
       </div>
@@ -279,36 +286,41 @@ export default function About() {
             >
               {/* Header Window Bar */}
               <div
-                className="flex items-center justify-between"
+                className="flex flex-wrap items-center justify-between gap-y-2"
                 style={{
                   marginBottom: "16px",
                   paddingBottom: "14px",
                   borderBottom: "1px solid rgba(33, 38, 45, 0.9)",
+                  gap: "8px",
                 }}
               >
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-[#FF5F56]" />
-                  <div className="w-3 h-3 rounded-full bg-[#FFBD2E]" />
-                  <div className="w-3 h-3 rounded-full bg-[#27C93F]" />
+                <div className="flex items-center gap-2 min-w-0 shrink">
+                  <div className="flex items-center gap-1 shrink-0">
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#FF5F56]" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#27C93F]" />
+                  </div>
                   <span
-                    className="font-mono text-xs ml-2"
+                    className="font-mono text-[11px] ml-1.5 truncate"
                     style={{ color: "#8B949E" }}
                   >
                     developer_profile.tsx
                   </span>
                 </div>
                 <div
-                  className="font-mono text-xs font-semibold flex items-center gap-2"
+                  className="font-mono font-semibold flex items-center gap-1.5 shrink-0"
                   style={{
-                    padding: "5px 12px",
+                    fontSize: "10px",
+                    padding: "4px 10px",
                     borderRadius: "8px",
                     background: "#0D1117",
                     color: "#00FF88",
                     border: "1px solid rgba(0, 255, 136, 0.35)",
                     boxShadow: "0 0 16px rgba(0, 255, 136, 0.12)",
+                    whiteSpace: "nowrap",
                   }}
                 >
-                  <span className="w-2 h-2 rounded-full bg-[#00FF88] animate-pulse inline-block shadow-[0_0_8px_#00FF88]" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#00FF88] animate-pulse inline-block shadow-[0_0_8px_#00FF88]" />
                   <span>mode: fullstack</span>
                 </div>
               </div>
