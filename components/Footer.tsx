@@ -155,21 +155,21 @@ export default function Footer() {
 
         {/* System Bar Shell */}
         <div
-          className="rounded-2xl flex flex-col md:flex-row items-center justify-between gap-4 font-mono text-xs"
+          className="rounded-2xl flex flex-col md:flex-row items-center justify-between gap-4 font-mono text-xs text-center md:text-left"
           style={{
             background: "#161B22",
             border: "1px solid #21262D",
-            padding: "16px 24px",
+            padding: "16px 20px",
           }}
         >
-          <div className="flex items-center gap-2" style={{ color: "#8B949E" }}>
-            <Terminal size={14} style={{ color: "#00FF88" }} />
+          <div className="flex items-center justify-center md:justify-start gap-2" style={{ color: "#8B949E" }}>
+            <Terminal size={14} style={{ color: "#00FF88" }} className="flex-shrink-0" />
             <span>© {new Date().getFullYear()} Rizwanu Rahman. All rights reserved.</span>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center justify-center md:justify-end gap-3">
             <div
-              className="font-mono text-xs font-semibold flex items-center gap-2"
+              className="font-mono text-xs font-semibold flex items-center gap-2 flex-shrink-0"
               style={{
                 padding: "5px 12px",
                 borderRadius: "8px",
@@ -182,10 +182,10 @@ export default function Footer() {
               <span className="w-2 h-2 rounded-full bg-[#00FF88] animate-pulse inline-block shadow-[0_0_8px_#00FF88]" />
               <span>HTTP 200 OK</span>
             </div>
-            <div className="flex items-center gap-1.5" style={{ color: "#8B949E" }}>
-              <Cpu size={13} style={{ color: "#00D4FF" }} />
-              <span>Built with Next.js &</span>
-              <Heart size={13} className="text-red-500 fill-red-500 inline" />
+            <div className="flex items-center gap-1.5 flex-shrink-0" style={{ color: "#8B949E" }}>
+              <Cpu size={13} style={{ color: "#00D4FF" }} className="flex-shrink-0" />
+              <span>Built with Next.js &amp;</span>
+              <Heart size={13} className="text-red-500 fill-red-500 inline flex-shrink-0" />
             </div>
           </div>
         </div>
