@@ -98,13 +98,18 @@ export const metadata: Metadata = {
     canonical: BASE_URL,
   },
 
-  // Favicon + App icons
+  // Favicon + App icons — PNG required for Google Search favicon (SVG not reliably rendered)
   icons: {
     icon: [
-      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/favicon-512.png", sizes: "512x512", type: "image/png" },
     ],
-    shortcut: "/icon.svg",
-    apple: "/icon.svg",
+    shortcut: "/favicon-32.png",
+    apple: "/favicon-192.png",
+    other: [
+      { rel: "icon", url: "/favicon-192.png" },
+    ],
   },
 
   // Open Graph — for social sharing (LinkedIn, Facebook, WhatsApp)
@@ -122,11 +127,11 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/profile.jpg",
-        width: 1200,
-        height: 630,
+        url: "/profile.png",
+        width: 1024,
+        height: 1024,
         alt: "Rizwanu Rahman — Full Stack Developer",
-        type: "image/jpeg",
+        type: "image/png",
       },
     ],
   },
@@ -137,7 +142,7 @@ export const metadata: Metadata = {
     title: "Rizwanu Rahman — Full Stack Developer | React, Next.js, TypeScript",
     description:
       "Full Stack Developer from Kerala, India. React, Next.js, TypeScript, Node.js & AI apps. Available for freelance worldwide.",
-    images: ["/profile.jpg"],
+    images: ["/profile.png"],
     creator: "@rizwanurahman",
     site: "@rizwanurahman",
   },
@@ -182,9 +187,9 @@ const jsonLd = {
       telephone: "+91 7558002009",
       image: {
         "@type": "ImageObject",
-        url: `${BASE_URL}/profile.jpg`,
-        width: 400,
-        height: 400,
+        url: `${BASE_URL}/profile.png`,
+        width: 1024,
+        height: 1024,
       },
       jobTitle: "Full Stack Developer",
       description:
