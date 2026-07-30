@@ -9,6 +9,14 @@ export const personalInfo = {
   github: "https://github.com/Rizwanu321",
   bio: `I'm a passionate Full Stack Developer with 3+ years of experience crafting high-performance web applications. I specialize in React, Next.js, TypeScript, and Node.js — building everything from AI-powered platforms to enterprise-grade systems. I thrive on turning complex problems into elegant, scalable solutions.`,
   resumeUrl: "https://drive.google.com/file/d/1A2WaGyS31QzW4Z7RqyrPLPOps921nEsk/view?usp=drive_link",
+  freelanceAvailable: true,
+  freelanceTagline: "Available for freelance projects — web apps, platforms & custom solutions.",
+  freelanceServices: [
+    { label: "Web App Development", icon: "monitor", desc: "React, Next.js, TypeScript — fast, scalable, production-ready" },
+    { label: "Frontend UI/UX", icon: "layout", desc: "Pixel-perfect, responsive interfaces with Tailwind & Framer Motion" },
+    { label: "API Integration", icon: "plug", desc: "REST APIs, third-party services, and AI/LLM integration" },
+    { label: "Performance Audit", icon: "zap", desc: "Lighthouse optimization, bundle analysis, and Core Web Vitals" },
+  ],
 };
 
 export interface Experience {

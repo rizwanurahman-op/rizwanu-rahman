@@ -78,20 +78,41 @@ export default function Hero() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center font-mono font-semibold text-xs"
-              style={{
-                gap: "10px",
-                padding: "6px 14px",
-                borderRadius: "8px",
-                background: "#0D1117",
-                color: "#00FF88",
-                border: "1px solid rgba(0, 255, 136, 0.35)",
-                marginBottom: "32px",
-                boxShadow: "0 0 16px rgba(0, 255, 136, 0.12)",
-              }}
+              className="flex flex-wrap items-center gap-3"
+              style={{ marginBottom: "32px" }}
             >
-              <span className="w-2 h-2 rounded-full bg-[#00FF88] animate-pulse inline-block shadow-[0_0_8px_#00FF88]" />
-              <span>status: OPEN_FOR_OPPORTUNITIES</span>
+              {/* Status: Open for Opportunities */}
+              <div
+                className="inline-flex items-center font-mono font-semibold text-xs"
+                style={{
+                  gap: "10px",
+                  padding: "6px 14px",
+                  borderRadius: "8px",
+                  background: "#0D1117",
+                  color: "#00FF88",
+                  border: "1px solid rgba(0, 255, 136, 0.35)",
+                  boxShadow: "0 0 16px rgba(0, 255, 136, 0.12)",
+                }}
+              >
+                <span className="w-2 h-2 rounded-full bg-[#00FF88] animate-pulse inline-block shadow-[0_0_8px_#00FF88]" />
+                <span>status: OPEN_FOR_OPPORTUNITIES</span>
+              </div>
+              {/* Freelance Badge */}
+              <div
+                className="inline-flex items-center font-mono font-semibold text-xs"
+                style={{
+                  gap: "8px",
+                  padding: "6px 14px",
+                  borderRadius: "8px",
+                  background: "#0D1117",
+                  color: "#FBB924",
+                  border: "1px solid rgba(251, 185, 36, 0.35)",
+                  boxShadow: "0 0 16px rgba(251, 185, 36, 0.1)",
+                }}
+              >
+                <span className="w-2 h-2 rounded-full bg-[#FBB924] animate-pulse inline-block shadow-[0_0_8px_#FBB924]" />
+                <span>freelance: AVAILABLE</span>
+              </div>
             </motion.div>
 
             {/* Greeting */}
@@ -129,6 +150,7 @@ export default function Hero() {
                 texts={[
                   "Full Stack Developer",
                   "Frontend Specialist",
+                  "Freelance Developer",
                   "React & Next.js Expert",
                   "UI/UX Enthusiast",
                   "AI Integration Developer",
@@ -155,6 +177,9 @@ export default function Hero() {
             >
               Crafting high-performance web experiences with modern technologies.
               Specializing in React, Next.js, TypeScript, and AI-powered applications.
+              Also available as a{" "}
+              <span style={{ color: "#FBB924", fontWeight: 600 }}>freelance developer</span>
+              {" "}— shipping production-ready apps for clients worldwide.
             </motion.p>
 
             {/* CTA Buttons */}

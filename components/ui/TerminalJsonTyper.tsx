@@ -10,7 +10,7 @@ export default function TerminalJsonTyper() {
   const [visibleLines, setVisibleLines] = useState<number>(0);
   const [isFullyDone, setIsFullyDone] = useState(false);
 
-  const totalLines = 10; // Total JSON lines to reveal
+  const totalLines = 12; // Total JSON lines to reveal
 
   // Stage 1: Type out "cat about.json"
   useEffect(() => {
@@ -104,6 +104,15 @@ export default function TerminalJsonTyper() {
 
           {visibleLines >= 4 && (
             <p style={{ paddingLeft: "20px" }}>
+              <span style={{ color: "#B44AFF" }}>&quot;mode&quot;</span>
+              <span style={{ color: "#6E7681" }}>: </span>
+              <span style={{ color: "#00D4FF" }}>&quot;fullstack | freelance&quot;</span>
+              <span style={{ color: "#6E7681" }}>,</span>
+            </p>
+          )}
+
+          {visibleLines >= 5 && (
+            <p style={{ paddingLeft: "20px" }}>
               <span style={{ color: "#B44AFF" }}>&quot;location&quot;</span>
               <span style={{ color: "#6E7681" }}>: </span>
               <span style={{ color: "#00FF88" }}>&quot;Kerala, India&quot;</span>
@@ -111,14 +120,14 @@ export default function TerminalJsonTyper() {
             </p>
           )}
 
-          {visibleLines >= 5 && (
+          {visibleLines >= 6 && (
             <p style={{ paddingLeft: "20px" }}>
               <span style={{ color: "#B44AFF" }}>&quot;skills&quot;</span>
               <span style={{ color: "#6E7681" }}>: [</span>
             </p>
           )}
 
-          {visibleLines >= 6 && (
+          {visibleLines >= 7 && (
             <p className="pl-4 sm:pl-9 flex flex-wrap gap-x-1">
               <span style={{ color: "#00FF88" }}>&quot;React&quot;</span>
               <span style={{ color: "#6E7681" }}>, </span>
@@ -129,7 +138,7 @@ export default function TerminalJsonTyper() {
             </p>
           )}
 
-          {visibleLines >= 7 && (
+          {visibleLines >= 8 && (
             <p className="pl-4 sm:pl-9 flex flex-wrap gap-x-1">
               <span style={{ color: "#00FF88" }}>&quot;Node.js&quot;</span>
               <span style={{ color: "#6E7681" }}>, </span>
@@ -139,13 +148,22 @@ export default function TerminalJsonTyper() {
             </p>
           )}
 
-          {visibleLines >= 8 && (
+          {visibleLines >= 9 && (
             <p style={{ paddingLeft: "20px" }}>
               <span style={{ color: "#6E7681" }}>],</span>
             </p>
           )}
 
-          {visibleLines >= 9 && (
+          {visibleLines >= 10 && (
+            <p style={{ paddingLeft: "20px" }}>
+              <span style={{ color: "#B44AFF" }}>&quot;freelance&quot;</span>
+              <span style={{ color: "#6E7681" }}>: </span>
+              <span style={{ color: "#FBB924" }}>&quot;open_for_projects&quot;</span>
+              <span style={{ color: "#6E7681" }}>,</span>
+            </p>
+          )}
+
+          {visibleLines >= 11 && (
             <p style={{ paddingLeft: "20px" }}>
               <span style={{ color: "#B44AFF" }}>&quot;available&quot;</span>
               <span style={{ color: "#6E7681" }}>: </span>
@@ -153,7 +171,7 @@ export default function TerminalJsonTyper() {
             </p>
           )}
 
-          {visibleLines >= 10 && <p style={{ color: "#6E7681" }}>{"}"}</p>}
+          {visibleLines >= 12 && <p style={{ color: "#6E7681" }}>{"}"}</p>}
 
           {/* Final command prompt line */}
           {isFullyDone && (

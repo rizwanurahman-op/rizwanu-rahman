@@ -140,6 +140,85 @@ export default function Contact() {
           subtitle="Have a project in mind, an opportunity, or want to collaborate? Send a message!"
         />
 
+        {/* Freelance Services Banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-5xl mx-auto rounded-2xl relative overflow-hidden"
+          style={{
+            background: "linear-gradient(135deg, rgba(251,185,36,0.05) 0%, rgba(13,17,23,0.95) 60%, rgba(0,212,255,0.03) 100%)",
+            border: "1px solid rgba(251,185,36,0.2)",
+            padding: "20px 24px",
+            marginBottom: "40px",
+          }}
+        >
+          {/* Top row: badge + meta info strip */}
+          <div className="flex flex-wrap items-center justify-between gap-3" style={{ marginBottom: "16px" }}>
+            {/* Left: status badge + comment */}
+            <div className="flex flex-wrap items-center gap-3">
+              <span
+                className="font-mono font-bold text-xs flex items-center gap-2"
+                style={{
+                  padding: "4px 10px",
+                  borderRadius: "8px",
+                  background: "rgba(251,185,36,0.1)",
+                  color: "#FBB924",
+                  border: "1px solid rgba(251,185,36,0.25)",
+                }}
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-[#FBB924] animate-pulse inline-block shadow-[0_0_8px_#FBB924]" />
+                freelance: OPEN_FOR_WORK
+              </span>
+              <span className="font-mono text-xs hidden sm:inline" style={{ color: "#6E7681" }}>
+                // Available for remote & contract projects worldwide
+              </span>
+            </div>
+            {/* Right: meta stats */}
+            <div className="flex items-center gap-4">
+              <div className="flex items-center gap-1.5">
+                <span className="font-mono text-[11px]" style={{ color: "#6E7681" }}>⚡ Avg. response</span>
+                <span className="font-mono font-bold text-[11px]" style={{ color: "#00D4FF" }}>&lt; 24h</span>
+              </div>
+              <div className="hidden sm:flex items-center gap-1.5">
+                <span className="font-mono text-[11px]" style={{ color: "#6E7681" }}>🌏 Timezone</span>
+                <span className="font-mono font-bold text-[11px]" style={{ color: "#00D4FF" }}>IST (UTC+5:30)</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Services Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5">
+            {personalInfo.freelanceServices.map((service, i) => (
+              <div
+                key={i}
+                className="rounded-xl"
+                style={{
+                  background: "#0D1117",
+                  border: "1px solid #21262D",
+                  padding: "12px 14px",
+                }}
+              >
+                <p className="font-mono font-bold" style={{ fontSize: "12px", color: "#FBB924", marginBottom: "4px" }}>
+                  ▹ {service.label}
+                </p>
+                <p className="font-sans" style={{ fontSize: "11px", color: "#6E7681", lineHeight: "1.5" }}>
+                  {service.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* Directional bridge to form */}
+          <p
+            className="font-mono text-xs text-center"
+            style={{ marginTop: "14px", color: "#6E7681" }}
+          >
+            // Fill out the form below to start a conversation ↓
+          </p>
+        </motion.div>
+
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 max-w-5xl mx-auto items-start">
           {/* Contact Form Column */}
           <motion.div
@@ -168,7 +247,7 @@ export default function Contact() {
             >
               {/* Form Title Bar */}
               <div
-                className="flex items-center justify-between"
+                className="flex flex-wrap items-center justify-between gap-3"
                 style={{
                   marginBottom: "18px",
                   paddingBottom: "14px",
@@ -177,19 +256,19 @@ export default function Contact() {
               >
                 <div className="flex items-center gap-3">
                   <div
-                    className="w-10 h-10 rounded-xl flex items-center justify-center"
+                    className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center flex-shrink-0"
                     style={{
                       background: "rgba(0, 255, 136, 0.1)",
                       border: "1.5px solid rgba(0, 255, 136, 0.25)",
                       color: "#00FF88",
                     }}
                   >
-                    <Send size={18} />
+                    <Send size={17} />
                   </div>
                   <div>
                     <h3
                       className="font-mono font-bold leading-tight"
-                      style={{ fontSize: "18px", color: "#E6EDF3" }}
+                      style={{ fontSize: "16px", color: "#E6EDF3" }}
                     >
                       send_message()
                     </h3>
@@ -204,15 +283,16 @@ export default function Contact() {
                 <div
                   className="font-mono text-xs font-semibold flex items-center gap-2"
                   style={{
-                    padding: "5px 12px",
+                    padding: "4px 10px",
                     borderRadius: "8px",
                     background: "#0D1117",
                     color: "#00FF88",
                     border: "1px solid rgba(0, 255, 136, 0.35)",
                     boxShadow: "0 0 16px rgba(0, 255, 136, 0.12)",
+                    whiteSpace: "nowrap",
                   }}
                 >
-                  <span className="w-2 h-2 rounded-full bg-[#00FF88] animate-pulse inline-block shadow-[0_0_8px_#00FF88]" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#00FF88] animate-pulse inline-block shadow-[0_0_8px_#00FF88]" />
                   <span>status: ACTIVE</span>
                 </div>
               </div>
@@ -454,8 +534,8 @@ export default function Contact() {
               </div>
             </TerminalWindow>
 
-            {/* Quick Contact Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+            {/* Quick Contact Grid — horizontal compact cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {quickContacts.map((contact, i) => (
                 <motion.a
                   key={contact.label}
@@ -470,11 +550,11 @@ export default function Contact() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.3 + i * 0.1 }}
-                  className="group rounded-2xl transition-all duration-500 flex flex-col justify-between"
+                  className="group rounded-xl transition-all duration-500 flex flex-row items-center gap-3"
                   style={{
                     background: "#161B22",
                     border: "1px solid #21262D",
-                    padding: "18px 20px",
+                    padding: "14px 16px",
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.borderColor = contact.border;
@@ -485,40 +565,41 @@ export default function Contact() {
                     e.currentTarget.style.boxShadow = "none";
                   }}
                 >
-                  <div className="flex items-center justify-between" style={{ marginBottom: "12px" }}>
-                    <div
-                      className="w-9 h-9 rounded-xl flex items-center justify-center"
-                      style={{
-                        background: contact.bg,
-                        border: `1.5px solid ${contact.border}`,
-                        color: contact.color,
-                      }}
-                    >
-                      {contact.iconType === "mail" && <Mail size={17} />}
-                      {contact.iconType === "phone" && <Phone size={17} />}
-                      {contact.iconType === "github" && <GithubIcon size={17} />}
-                      {contact.iconType === "linkedin" && <LinkedinIcon size={17} />}
-                    </div>
-                    <ArrowUpRight
-                      size={16}
-                      className="transition-colors duration-300"
-                      style={{ color: "#8B949E" }}
-                    />
+                  {/* Icon */}
+                  <div
+                    className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
+                    style={{
+                      background: contact.bg,
+                      border: `1.5px solid ${contact.border}`,
+                      color: contact.color,
+                    }}
+                  >
+                    {contact.iconType === "mail" && <Mail size={16} />}
+                    {contact.iconType === "phone" && <Phone size={16} />}
+                    {contact.iconType === "github" && <GithubIcon size={16} />}
+                    {contact.iconType === "linkedin" && <LinkedinIcon size={16} />}
                   </div>
-                  <div>
+                  {/* Label + Value */}
+                  <div className="flex-1 min-w-0">
                     <p
                       className="font-mono font-bold"
-                      style={{ fontSize: "14px", color: "#E6EDF3" }}
+                      style={{ fontSize: "13px", color: "#E6EDF3" }}
                     >
                       {contact.label}
                     </p>
                     <p
                       className="font-mono truncate"
-                      style={{ fontSize: "11px", color: contact.color, marginTop: "3px" }}
+                      style={{ fontSize: "11px", color: contact.color, marginTop: "2px" }}
                     >
                       {contact.value}
                     </p>
                   </div>
+                  {/* Arrow */}
+                  <ArrowUpRight
+                    size={15}
+                    className="flex-shrink-0 transition-colors duration-300"
+                    style={{ color: "#8B949E" }}
+                  />
                 </motion.a>
               ))}
             </div>
