@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://rizwanurahman.in/sitemap.xml
+Sitemap: https://www.rizwanurahman.in/sitemap.xml

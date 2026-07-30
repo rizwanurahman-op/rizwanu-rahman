@@ -15,7 +15,7 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
-const BASE_URL = "https://rizwanurahman.in";
+const BASE_URL = "https://www.rizwanurahman.in";
 
 export const viewport: Viewport = {
   themeColor: "#00FF88",
