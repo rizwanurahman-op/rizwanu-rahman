@@ -51,7 +51,8 @@ export default function TerminalJsonTyper() {
         display: "flex",
         flexDirection: "column",
         gap: "8px",
-        minHeight: "310px",
+        height: "450px",
+        overflow: "hidden",
       }}
     >
       {/* Command prompt row */}

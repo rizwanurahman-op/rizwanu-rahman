@@ -68,16 +68,16 @@ export default function Hero() {
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Content */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="lg:col-span-7 order-1 lg:order-1"
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="lg:col-span-7 order-first lg:order-1"
           >
             {/* Status Badge */}
             <motion.div
-              initial={{ opacity: 0, y: 10 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
+              transition={{ delay: 0.25, duration: 0.5, ease: "easeOut" }}
               className="flex flex-wrap items-center gap-3"
               style={{ marginBottom: "32px" }}
             >
@@ -117,9 +117,9 @@ export default function Hero() {
 
             {/* Greeting */}
             <motion.p
-              initial={{ opacity: 0, y: 10 }}
+              initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
+              transition={{ delay: 0.35, duration: 0.5, ease: "easeOut" }}
               className="text-text-secondary text-base md:text-lg mb-3 font-mono flex items-center gap-2"
             >
               <span style={{ color: "#00FF88", fontWeight: 700 }}>{">"}</span>
@@ -128,9 +128,9 @@ export default function Hero() {
 
             {/* Name */}
             <motion.h1
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
+              transition={{ delay: 0.45, duration: 0.6, ease: "easeOut" }}
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 tracking-tight leading-[1.1]"
             >
               <span className="text-text-primary">{personalInfo.name.split(" ")[0]}</span>
@@ -164,9 +164,9 @@ export default function Hero() {
 
             {/* Bio Paragraph */}
             <motion.p
-              initial={{ opacity: 0, y: 10 }}
+              initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.7 }}
+              transition={{ delay: 0.65, duration: 0.5, ease: "easeOut" }}
               className="font-sans max-w-xl leading-relaxed"
               style={{
                 fontSize: "15px",
@@ -184,9 +184,9 @@ export default function Hero() {
 
             {/* CTA Buttons */}
             <motion.div
-              initial={{ opacity: 0, y: 10 }}
+              initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8 }}
+              transition={{ delay: 0.75, duration: 0.5, ease: "easeOut" }}
               className="flex flex-wrap items-center gap-5"
               style={{ marginBottom: "40px" }}
             >
@@ -300,10 +300,10 @@ export default function Hero() {
 
           {/* Right Content — Avatar + Terminal Window */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="lg:col-span-5 order-2 lg:order-2 flex flex-col items-center gap-8"
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            className="lg:col-span-5 order-last lg:order-2 flex flex-col items-center gap-8"
           >
             {/* Developer Avatar */}
             <motion.div
